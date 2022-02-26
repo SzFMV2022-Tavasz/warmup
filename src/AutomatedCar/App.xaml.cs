@@ -56,7 +56,7 @@ namespace AutomatedCar
                 world.AddControlledCar(controlledCar);
                 controlledCar.Start();
 
-                var dummySensor = new DummySensor(world.ControlledCar.VirtualFunctionBus);
+                var dummySensor = new DummySensor(world.ControlledCar);
 
                 var controlledCar2 = new Models.AutomatedCar(4250, 1420, "car_1_red.png");
                 controlledCar2.Geometry = geom;
