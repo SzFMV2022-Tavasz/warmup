@@ -22,8 +22,8 @@
         {
             Circle kor = (Circle)World.Instance.WorldObjects.Where(i => i.GetType()==typeof(Circle)).FirstOrDefault();
 
-            int xD = Math.Abs(this.parentCar.X - kor.X);
-            int yD = Math.Abs(this.parentCar.Y - kor.Y);
+            int xD = Math.Abs(World.Instance.ControlledCar.X - kor.X);
+            int yD = Math.Abs(World.Instance.ControlledCar.Y - kor.Y);
 
             this.DummyPacket.DistanceX = xD;
             this.DummyPacket.DistanceY = yD;
