@@ -12,18 +12,15 @@
     public class DummySensor: SystemComponent
     {
         public DummyPacket DummyPacket { get; set; }
-        private World World;
-        private AutomatedCar parentCar;
-        public DummySensor(VirtualFunctionBus vb,World world,AutomatedCar car): base(vb)
+
+        public DummySensor(VirtualFunctionBus vb): base(vb)
         {
             this.DummyPacket = (DummyPacket)this.virtualFunctionBus.DummyPacket;
-            this.World = world;
-            this.parentCar = car;
         }
 
         public override void Process()
         {
-            Circle kor = (Circle)this.World.WorldObjects.Where(i => i.GetType()==typeof(Circle)).FirstOrDefault();
+            Circle kor = (Circle)World.Instance.WorldObjects.Where(i => i.GetType()==typeof(Circle)).FirstOrDefault();
 
             int xD = Math.Abs(this.parentCar.X - kor.X);
             int yD = Math.Abs(this.parentCar.Y - kor.Y);
