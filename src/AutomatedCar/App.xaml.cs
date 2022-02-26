@@ -5,6 +5,7 @@ namespace AutomatedCar
     using System.IO;
     using System.Reflection;
     using AutomatedCar.Models;
+    using AutomatedCar.SystemComponents;
     using AutomatedCar.ViewModels;
     using AutomatedCar.Views;
     using Avalonia;
@@ -54,6 +55,8 @@ namespace AutomatedCar
                 controlledCar.Geometries.Add(new PolylineGeometry(new List<Point> { new Point(72, 240), new Point(72, 180) }, false));
                 world.AddControlledCar(controlledCar);
                 controlledCar.Start();
+
+                var dummySensor = new DummySensor(world.ControlledCar.VirtualFunctionBus);
 
                 var controlledCar2 = new Models.AutomatedCar(4250, 1420, "car_1_red.png");
                 controlledCar2.Geometry = geom;
