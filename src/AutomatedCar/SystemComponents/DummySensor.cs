@@ -15,7 +15,8 @@
 
         public DummySensor(VirtualFunctionBus vb): base(vb)
         {
-            this.DummyPacket = (DummyPacket)this.virtualFunctionBus.DummyPacket;
+            this.DummyPacket = new DummyPacket();
+            this.virtualFunctionBus.DummyPacket = this.DummyPacket;
         }
 
         public override void Process()
