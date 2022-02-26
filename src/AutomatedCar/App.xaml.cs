@@ -5,6 +5,7 @@ namespace AutomatedCar
     using System.IO;
     using System.Reflection;
     using AutomatedCar.Models;
+    using AutomatedCar.SystemComponents;
     using AutomatedCar.ViewModels;
     using AutomatedCar.Views;
     using Avalonia;
