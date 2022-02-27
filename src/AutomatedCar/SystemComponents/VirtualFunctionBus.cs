@@ -7,7 +7,7 @@ namespace AutomatedCar.SystemComponents
     {
         private List<SystemComponent> components = new List<SystemComponent>();
 
-        public IReadOnlyDummyPacket DummyPacket { get; set; }
+        public IReadOnlyDummyPacket DummyPacket; /*{ get; set; }*/
 
         public void RegisterComponent(SystemComponent component)
         {
@@ -21,5 +21,24 @@ namespace AutomatedCar.SystemComponents
                 component.Process();
             }
         }
+
+        //public int IReadOnlyDummyPacket()
+        //{
+        //    get => DummyPacket;
+        //    set => this.RaiseAndSetIfChanged(ref this.distanceX, value);
+
+        //    return 0;              //////////////////////////////////////////////////////////////////////////////////
+        //}
+
+        //public int ReadOnlyDummyPacket()
+        //{
+        //    return 0;
+        //}
+
+        //public int registerComponent(SystemComponent component)
+        //{
+        //    components.Add(component);
+        //    return 0;
+        //}
     }
 }
