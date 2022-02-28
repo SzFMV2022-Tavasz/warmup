@@ -11,13 +11,14 @@
     public class DummySensor : SystemComponent
     {
         DummyPacket packet = new DummyPacket();
-        WorldObject circle;
+        private WorldObject circle;
 
         public DummySensor(VirtualFunctionBus bus) : base(bus)
         {
             this.circle = (from x in World.Instance.WorldObjects
                            where x.GetType() == typeof(Circle)
                            select x).ToList().FirstOrDefault();
+            bus.DummyPacket = this.packet;
         }
 
         public override void Process()
