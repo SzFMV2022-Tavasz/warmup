@@ -1,7 +1,7 @@
 namespace AutomatedCar.SystemComponents
 {
     using System.Collections.Generic;
-    using SystemComponents.Packets;
+    using AutomatedCar.SystemComponents.Packets;
 
     public class VirtualFunctionBus : GameBase
     {
@@ -9,7 +9,7 @@ namespace AutomatedCar.SystemComponents
 
         public IReadOnlyDummyPacket DummyPacket { get; set; }
 
-    public void RegisterComponent(SystemComponent component)
+        public void RegisterComponent(SystemComponent component)
         {
             this.components.Add(component);
         }
@@ -21,24 +21,5 @@ namespace AutomatedCar.SystemComponents
                 component.Process();
             }
         }
-
-        //public int IReadOnlyDummyPacket()
-        //{
-        //    get => DummyPacket;
-        //    set => this.RaiseAndSetIfChanged(ref this.distanceX, value);
-
-        //    return 0;              //////////////////////////////////////////////////////////////////////////////////
-        //}
-
-        //public int ReadOnlyDummyPacket()
-        //{
-        //    return 0;
-        //}
-
-        //public int registerComponent(SystemComponent component)
-        //{
-        //    components.Add(component);
-        //    return 0;
-        //}
     }
 }

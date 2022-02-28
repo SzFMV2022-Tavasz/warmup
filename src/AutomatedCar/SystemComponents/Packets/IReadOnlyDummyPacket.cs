@@ -5,7 +5,5 @@ namespace AutomatedCar.SystemComponents.Packets
         int DistanceX { get; }
 
         int DistanceY { get; }
-
-
     }
 }

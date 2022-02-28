@@ -1,20 +1,21 @@
 ﻿namespace AutomatedCar.SystemComponents.Packets
 {
-    using AutomatedCar.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using AutomatedCar.Models;
 
     public class DummySensor : SystemComponent
     {
         private DummyPacket dummyPacket;
 
-        public DummySensor(VirtualFunctionBus virtualFunctionBus) : base(virtualFunctionBus)
+        public DummySensor(VirtualFunctionBus virtualFunctionBus)
+            : base(virtualFunctionBus)
         {
-            dummyPacket = new DummyPacket();
-            virtualFunctionBus.DummyPacket = dummyPacket; ///////////////////////
+            this.dummyPacket = new DummyPacket();
+            virtualFunctionBus.DummyPacket = this.dummyPacket;
         }
 
         public override void Process()
