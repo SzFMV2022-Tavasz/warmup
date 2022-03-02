@@ -26,7 +26,7 @@
             AutomatedCar automatedCar = World.Instance.ControlledCar;
 
             this.dummyPacket.DistanceX = Math.Abs(cir.X - automatedCar.X);
-            this.dummyPacket.DistanceX = Math.Abs(cir.Y - automatedCar.Y);
+            this.dummyPacket.DistanceY = Math.Abs(cir.Y - automatedCar.Y);
         }
     }
 }
